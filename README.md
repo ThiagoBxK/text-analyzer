@@ -12,6 +12,8 @@ Pode analisar um texto processado do usuario e obter:
 
 ### 🚧 Funcionalidades Futuras
 
+- [ ]  Quantidade total de palavras, linhas, letras maisculas & minusculas e caracteres especiais
+- [ ]  Palavras mais & menos usadas com suas porcentagens e quantidade de usos
 - [ ]  Analisar arquivos .txt 
 - [ ]  Gerar outro arquivo .txt ou .pdf com as informações
 
