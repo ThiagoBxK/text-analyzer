@@ -1,4 +1,4 @@
-## Aprendendo Java do Zero
+## Text Analyzer
 
 Enquatno migrava para JAVA, busquei aprender conceitos mais avançados que não conseguia expandir em JavaScript, como POO, gerenciamento de memória, threads, entre outros. Para fixar o conhecimento, decidi criar pequenos projetos, com o intuito de literalmente colocar a mão na massa.
 
