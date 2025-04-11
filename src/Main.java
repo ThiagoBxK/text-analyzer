@@ -1,7 +1,15 @@
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        TextAnalyzer analyzer = new TextAnalyzer();
+        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
+        // to see how IntelliJ IDEA suggests fixing it.
+        System.out.printf("Hello and welcome!");
 
-        analyzer.analyze("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales tellus risus, vitae aliquam arcu tempus et. In quis magna tortor. Pellentesque porttitor volutpat dolor sed elementum. Curabitur luctus luctus eleifend. Sed viverra egestas ligula, non efficitur nisl convallis vitae. Cras aliquam tellus ipsum. Donec malesuada viverra nulla, eu vehicula nulla sodales in. In nec orci posuere, rhoncus ante sit amet, varius nunc. Phasellus tincidunt placerat pulvinar. Etiam quis vehicula massa. Donec pulvinar cursus dolor. Maecenas fermentum sapien ultrices, mollis diam quis, mattis eros.");
+        for (int i = 1; i <= 5; i++) {
+            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
+            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
+            System.out.println("i = " + i);
+        }
     }
 }
