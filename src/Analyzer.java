@@ -16,10 +16,12 @@ public abstract class Analyzer {
         long totalNumbers = this.totalNumbers(text);
         long totalWhiteSpace = this.totalWhiteSpace(text);
 
+        System.out.println("x-------- Metrics --------x");
         System.out.printf("Total of bytes: %s \n", totalBytes);
         System.out.printf("Total of characters: %s \n", totalChars);
         System.out.printf("Total of letters: %s \n", totalLetters);
         System.out.printf("Total of numbers: %s \n", totalNumbers);
         System.out.printf("Total of white space: %s \n", totalWhiteSpace);
+        System.out.println("x-----------------------x");
     }
 }
