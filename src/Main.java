@@ -8,6 +8,6 @@ public class Main {
         String text = scanner.nextLine();
         TextAnalyzer analyzer = new TextAnalyzer(text);
 
-        analyzer.createMetricsFile("teste2.txt");
+        analyzer.createMetricsFile("metrics.txt");
        }
 }

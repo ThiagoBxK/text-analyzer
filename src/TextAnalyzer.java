@@ -5,70 +5,76 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class TextAnalyzer {
-    private static String text;
+    private final String text;
+    private final Path baseDirectory;
+    private static final String dirname = "metrics";
 
-    TextAnalyzer(String text) {
+    public TextAnalyzer(String text) {
         this.text = text;
+        this.baseDirectory = Paths.get(System.getProperty("user.dir"));
     }
 
-    public long totalBytes(String text) {
+    public long getTotalBytes() {
         return text.getBytes(StandardCharsets.UTF_8).length;
     }
 
-    public long totalChars(String text) {
+    public long getTotalChars() {
         return text.length();
     }
 
-    public long totalLetters(String text) {
-        return text.chars()
-                .filter(Character::isLetter)
-                .count();
+    public long getTotalLetters() {
+        return text.chars().filter(Character::isLetter).count();
     }
 
-    public long totalNumbers(String text) {
-        return text.chars()
-                .filter(Character::isDigit)
-                .count();
+    public long getTotalNumbers() {
+        return text.chars().filter(Character::isDigit).count();
     }
 
-    public long totalWhiteSpace(String text) {
-        return text.chars()
-                .filter(Character::isWhitespace)
-                .count();
+    public long getTotalWhiteSpace() {
+        return text.chars().filter(Character::isWhitespace).count();
     }
 
-    private String metricsFileContent() {
+    public long getTotalLines() {
+        return text.split("[\n\r]+").length;
+    }
+
+    private String generateMetricsContent() {
         return String.format("""
-                        ------- Metrics -------
-                        Total of bytes: %s
-                        Total of characters: %s
-                        Total of letters: %s
-                        Total of numbers: %s
-                        Total of white space: %s
-                        -----------------------
-                        """,
-                this.totalBytes(this.text),
-                this.totalChars(this.text),
-                this.totalLetters(this.text),
-                this.totalNumbers(this.text),
-                this.totalWhiteSpace(this.text)
-        );
+                ------- Metrics -------
+                Total of bytes: %s
+                Total of characters: %s
+                Total of letters: %s
+                Total of numbers: %s
+                Total of white space: %s
+                Total of lines: %s
+                -----------------------
+                """, getTotalBytes(), getTotalChars(), getTotalLetters(),
+                getTotalNumbers(), getTotalWhiteSpace(), getTotalLines());
     }
 
-    public void createMetricsFile(String fileName) {
-        Path currentDir = Paths.get(System.getProperty("user.dir"));
-        Path filePath = Paths.get(currentDir.toString(), "metrics", fileName);
-        String content = this.metricsFileContent();
+    public void createMetricsFolder(Path path) {
+        try {
+            Files.createDirectory(path);
 
-        try (FileWriter fileWriter = new FileWriter(filePath.toString())) {
-            fileWriter.write(content);
-
-            System.out.printf("Metrics file has been created: %s \n", filePath.toString());
-            System.out.println(content);
+            System.out.println("Metrics folder created.");
         } catch (Exception e) {
-            System.err.printf("Ops, an error occurred while trying to create the metrics file: %s \n", e);
+            System.err.printf("Error creating metrics folder: %s\n", e.getMessage());
         }
     }
 
+    public void createMetricsFile(String fileName) {
+        Path metricsPath = baseDirectory.resolve(dirname);
+        Path filePath = baseDirectory.resolve(dirname).resolve(fileName);
+        String content = generateMetricsContent();
 
+        if (!Files.exists(metricsPath))
+            createMetricsFolder(metricsPath);
+
+        try (FileWriter fileWriter = new FileWriter(filePath.toFile())) {
+            fileWriter.write(content);
+            System.out.printf("Metrics file created: %s\n", filePath);
+        } catch (Exception e) {
+            System.err.printf("Error creating metrics file: %s\n", e.getMessage());
+        }
+    }
 }

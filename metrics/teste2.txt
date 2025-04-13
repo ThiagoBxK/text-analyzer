@@ -1,7 +1,0 @@
-------- Metrics -------
-Total of bytes: 32
-Total of characters: 29
-Total of letters: 24
-Total of numbers: 0
-Total of white space: 4
------------------------
