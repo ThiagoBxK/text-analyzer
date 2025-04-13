@@ -22,3 +22,5 @@ Pode analisar um texto processado do usuario e obter:
 - Funções anonimas com lambda
 - Classes abstratas com metodos concretos
 - Processar prompt do usúario
+
+![Screenshoot](./preview.gif)
