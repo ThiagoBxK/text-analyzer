@@ -58,13 +58,15 @@ public class TextAnalyzer {
     public void createMetricsFile(String fileName) {
         Path currentDir = Paths.get(System.getProperty("user.dir"));
         Path filePath = Paths.get(currentDir.toString(), "metrics", fileName);
+        String content = this.metricsFileContent();
 
         try (FileWriter fileWriter = new FileWriter(filePath.toString())) {
-            fileWriter.write(metricsFileContent());
+            fileWriter.write(content);
 
-            System.out.printf("Arquivo de metricas criado com sucesso: %s \n", filePath.toString());
+            System.out.printf("Metrics file has been created: %s \n", filePath.toString());
+            System.out.println(content);
         } catch (Exception e) {
-            System.err.printf("Houve um erro ao criar o arquivo: %s \n", e);
+            System.err.printf("Ops, an error occurred while trying to create the metrics file: %s \n", e);
         }
     }
 
