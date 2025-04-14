@@ -8,14 +8,13 @@ Pequenos projetos como este podem servir de inspiração, para que futuramente e
 ### ✅ Funcionalidades Implementadas
 Pode analisar um texto processado do usuario e obter:
 
-- [x]  Quantidade de bytes, caracteres, letras, numeros e espaços em branco do texto
+- [x]  Quantidade de bytes, caracteres, letras, palavras, numeros e espaços em branco do texto
+- [x]  É possivel analisar arquivos .txt
+- [x]  Gera um novo arquivo .txt com as metricas  
 
 ### 🚧 Funcionalidades Futuras
 
-- [ ]  Quantidade total de palavras, linhas, letras maisculas & minusculas e caracteres especiais
-- [ ]  Palavras mais & menos usadas com suas porcentagens e quantidade de usos
-- [ ]  Analisar arquivos .txt 
-- [ ]  Gerar outro arquivo .txt ou .pdf com as informações
+- [ ]  Palavras mais & menos usadas com suas respectivas porcentagens de usos
 
 ![Screenshoot](./preview.gif)
 
