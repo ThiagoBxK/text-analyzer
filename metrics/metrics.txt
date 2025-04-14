@@ -1,0 +1,9 @@
+------- Metrics -------
+Total of bytes: 39306
+Total of characters: 39306
+Total of letters: 32027
+Total of words: 5814
+Total of numbers: 0
+Total of white space: 6002
+Total of lines: 64
+-----------------------
